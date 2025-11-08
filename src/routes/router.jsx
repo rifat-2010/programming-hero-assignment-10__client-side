@@ -7,12 +7,16 @@ import AddHabit from "../pages/AddHabit";
 import MyHabits from "../pages/MyHabits";
 import PublicHabits from "../pages/PublicHabits";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import ErrorPage from "../pages/ErrorPage";
+import Loading from "../components/Loading";
 
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout/>,
+    errorElement: <ErrorPage />,
+    hydrateFallbackElement: <Loading></Loading>,
     children: [
         {
             path: '/',

@@ -119,7 +119,7 @@ const handleSignout = () => {
         :
 // Sign In button for when user will not be login
   <NavLink to={'/signIn-page'} className="bg-purple-500 text-white px-4 py-2 rounded-md font-semibold cursor-pointer text-center">
-            Sign in
+            Login
     </NavLink>
  
 }
