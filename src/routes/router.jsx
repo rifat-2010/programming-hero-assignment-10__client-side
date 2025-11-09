@@ -9,6 +9,7 @@ import PublicHabits from "../pages/PublicHabits";
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import ErrorPage from "../pages/ErrorPage";
 import Loading from "../components/Loading";
+import HabitDetails from "../pages/HabitDetails";
 
 
 export const router = createBrowserRouter([
@@ -33,6 +34,12 @@ export const router = createBrowserRouter([
         {
             path: '/Public_Habits',
             element: <PublicHabits/>,
+            loader: () => fetch('http://localhost:3000/habits'),
+        },
+        {
+            path: '/Habit_Details_page',
+            element: <HabitDetails/>,
+            loader: () => fetch('http://localhost:3000/habits'),
         },
         {
         path: '/signIn-page',

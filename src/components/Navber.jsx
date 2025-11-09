@@ -10,7 +10,7 @@ import { HashLoader } from "react-spinners";
 
 const Navbar = () => {
 const {user, setUser, loading} = useContext(AuthContext);
-console.log(loading, user);
+// console.log(loading, user);
 
 
 // signOut function
@@ -36,7 +36,7 @@ const handleSignout = () => {
         </figure>
 
       {/* mobile and md:device dropdown nav code */}
-    <div className="dropdown md:hidden">
+    <div className="dropdown lg:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,16 +59,17 @@ const handleSignout = () => {
             className="menu menu-sm dropdown-content bg-white left-0 rounded-box mt-3 w-52 p-2 shadow-md"
           >
             <li>
-              <NavLink to={"/"}>Home</NavLink>
+            <NavLink to={'/'}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to={'/Add_Habit'}>Add Habit</NavLink>
+          </li>
+          
+            <li>
+              <NavLink to={'/My_Habits'}>My Habits</NavLink>
             </li>
             <li>
-              <NavLink>About Us</NavLink>
-            </li>
-            <li>
-              <NavLink>Blog</NavLink>
-            </li>
-            <li>
-              <NavLink>My Profile</NavLink>
+              <NavLink to={'/Public_Habits'}>Public Habits</NavLink>
             </li>
            
           </ul>
