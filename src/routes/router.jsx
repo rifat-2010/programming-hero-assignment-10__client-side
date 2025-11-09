@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
         {
             path: '/Habit_Details_page/:id',
             element: <PrivateRoute><HabitDetails/></PrivateRoute>,
-            loader: () => fetch('http://localhost:3000/habits'),
+            loader: ({params}) => fetch(`http://localhost:3000/habits/${params.id}`),
         },
         {
         path: '/signIn-page',
