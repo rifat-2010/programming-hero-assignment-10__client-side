@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 
 const HabitCard = ({ habit }) => {
-  const { title, description, category, reminderTime, userName, imageUrl } = habit;
+  const { title, description, category, reminderTime, userName, imageUrl, _id } = habit;
 
   return (
     <div className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition">
@@ -31,7 +31,7 @@ const HabitCard = ({ habit }) => {
         <p className="text-sm text-gray-500">By: {userName}</p>
 
         {/* Button */}
-        <Link to={'/Habit_Details_page'} className="common-btn block w-full text-center">
+        <Link to={`/Habit_Details_page/${_id}`} className="common-btn block w-full text-center">
 
             View Habit
      

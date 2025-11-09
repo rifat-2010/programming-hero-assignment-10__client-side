@@ -37,8 +37,8 @@ export const router = createBrowserRouter([
             loader: () => fetch('http://localhost:3000/habits'),
         },
         {
-            path: '/Habit_Details_page',
-            element: <HabitDetails/>,
+            path: '/Habit_Details_page/:id',
+            element: <PrivateRoute><HabitDetails/></PrivateRoute>,
             loader: () => fetch('http://localhost:3000/habits'),
         },
         {

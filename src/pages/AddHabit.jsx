@@ -1,7 +1,8 @@
 import { use } from "react";
 import { AuthContext } from "../context/AuthContext";
-import toast from "react-hot-toast";
+
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const AddHabit = () => {
   const { user } = use(AuthContext);
@@ -23,7 +24,9 @@ const AddHabit = () => {
       // creatorId: user.uid,                  // যদি থাকে
       // isPublic: true,                       // চাইলে default true
     };
-    console.log(formData);
+    // console.log(formData);
+
+
 
     fetch("http://localhost:3000/habits", {
       method: "POST",
@@ -34,7 +37,7 @@ const AddHabit = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        navigate("/Public_Habits");
+        navigate("/My_Habits");
         toast.success("Successfully added!");
         console.log(data);
       })
@@ -49,7 +52,6 @@ const AddHabit = () => {
         <div className="card-body p-6 relative">
           <h2 className="text-2xl font-bold text-center mb-6">Add New Habit</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* <form onSubmit={handleSubmit} className="space-y-4"> */}
             {/* Name Field */}
             <div>
               <label className="label font-medium">Name</label>
@@ -113,7 +115,7 @@ const AddHabit = () => {
                 className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
                 placeholder="Enter your new habit name"
                 value={user.email || "No Email"} // default value
-                readOnly // user change করতে পারবে না
+                readOnly // user can't change
               />
             </div>
 
@@ -124,7 +126,7 @@ const AddHabit = () => {
                 className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
                 placeholder="Enter your new habit name"
                 value={user.displayName || "No Name"} // default value
-                readOnly // user change করতে পারবে না
+                readOnly // user can't change
               />
             </div>
 
