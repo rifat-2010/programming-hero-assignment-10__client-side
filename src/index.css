@@ -14,7 +14,9 @@
   duration-200;
 }
 
-/*.common-btn { px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold cursor-pointer text-white transition duration-300 hover:shadow-lg hover:shadow-primary/50 hover:scale-[1.02] }*/
+/* .common-btn {
+  @apply px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold cursor-pointer text-white transition duration-300 hover:shadow-lg hover:shadow-primary/50 hover:scale-[1.02]
+ } */
 
 
 .common-btn {
@@ -22,7 +24,7 @@
   padding-right: 2rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  background-color: var(--primary, #007bff);
+ background-color: var(--color-primary);
   color: #ffffff;
   border-radius: 0.5rem;
   font-weight: 600;
@@ -35,7 +37,7 @@
     0 4px 6px -2px rgba(0, 0, 0, 0.05),
     0 4px 6px -1px rgba(var(--primary-rgb, 0, 123, 255), 0.5);
   transform: scale(1.02);
-}
+} 
 
 
 

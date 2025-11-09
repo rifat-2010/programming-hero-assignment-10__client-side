@@ -12,7 +12,7 @@ const HomeFinalSection = () => {
             Join thousands of people building better habits every day
           </p>
           <div className="flex gap-4 justify-center pt-4">
-            <div className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold cursor-pointer text-white transition duration-300 hover:shadow-lg hover:shadow-primary/50 hover:scale-[1.02]">
+            <div className="common-btn">
               Start Your Journey
             </div>
           </div>

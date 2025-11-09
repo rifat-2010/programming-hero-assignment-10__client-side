@@ -4,7 +4,7 @@ import HabitCard from '../components/HabitCard';
 const PublicHabits = () => {
 
 const data = useLoaderData();
-console.log(data);
+// console.log(data);
 
     return (
 

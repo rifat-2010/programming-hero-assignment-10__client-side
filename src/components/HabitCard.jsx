@@ -31,7 +31,7 @@ const HabitCard = ({ habit }) => {
         <p className="text-sm text-gray-500">By: {userName}</p>
 
         {/* Button */}
-        <Link to={'/Habit_Details_page'} className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold cursor-pointer text-white transition duration-300 hover:shadow-lg hover:shadow-primary/50 hover:scale-[1.02] block w-full text-center">
+        <Link to={'/Habit_Details_page'} className="common-btn block w-full text-center">
 
             View Habit
      
