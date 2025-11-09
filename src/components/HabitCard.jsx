@@ -1,7 +1,14 @@
 import { Link } from "react-router";
 
 const HabitCard = ({ habit }) => {
-  const { title, description, category, reminderTime, userName, imageUrl, _id } = habit;
+  const {
+    title,
+    description,
+    category,
+    reminderTime,
+    imageUrl,
+    _id,
+  } = habit;
 
   return (
     <div className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition">
@@ -28,13 +35,20 @@ const HabitCard = ({ habit }) => {
 
         {/* Reminder + Creator */}
         <p className="text-sm text-gray-500">Reminder: {reminderTime}</p>
-        <p className="text-sm text-gray-500">By: {userName}</p>
+        {habit.isPublic && habit.userName ? (
+          <p className="text-sm text-gray-500">
+            Creator Name: {habit.userName}
+          </p>
+        ) : <p className="text-sm text-gray-500">
+            Created By: {habit.userEmail}
+          </p>}
 
         {/* Button */}
-        <Link to={`/Habit_Details_page/${_id}`} className="common-btn block w-full text-center">
-
-            View Habit
-     
+        <Link
+          to={`/Habit_Details_page/${_id}`}
+          className="common-btn block w-full text-center"
+        >
+          View Habit
         </Link>
       </div>
     </div>

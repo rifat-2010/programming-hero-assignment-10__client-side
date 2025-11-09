@@ -21,22 +21,35 @@ const Home = () => {
       <HomeBanner></HomeBanner>
 
       {/* Featured Habits Section */}
-      <section className="py-20 px-4 max-w-7xl mx-auto">
+      <section className="py-24 px-4 bg-gradient-to-b from-white to-purple-50">
         {/* title bar */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            Featured Habits
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Discover popular habits that are transforming lives
-          </p>
-        </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
+              <span className="text-purple-600 font-medium">
+                ✨ Latest Additions
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              Featured Habits
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Discover popular habits that are transforming lives around the
+              world
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/*Latest_Habit Cards */}
-          {data.map((habit) => (
-            <HabitCard habit={habit} />
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/*Latest_Habit Cards */}
+            {data.map((habit) => (
+              <div
+                key={habit._id}
+                className="transform hover:scale-105 transition-all duration-300"
+              >
+                <HabitCard habit={habit} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -1,41 +1,43 @@
-import React from 'react';
+import React from "react";
 
 const HomeBanner = () => {
-    return (
-        <div>
-                 {/* Hero Banner / Slider */}
-      <section className="relative h-[600px] overflow-hidden bg-linear-to-br from-primary/10 via-accent/5 to-background">
+  return (
+    <div>
+      {/* Hero Banner / Slider */}
+      <section className="relative h-[600px] overflow-hidden bg-linear-to-br from-purple-100 via-blue-50 to-white">
         <div className="absolute inset-0 flex">
           {/* Slide 1 */}
           <div className="min-w-full flex items-center justify-center px-4">
-            <div className="max-w-4xl text-center space-y-6">
-              <h1 className="text-5xl md:text-7xl font-bold text-foreground">
+            <div className="max-w-4xl text-center space-y-8 relative z-10">
+              <div className="inline-block p-2 bg-purple-100 rounded-full mb-4">
+                <span className="text-purple-600 font-semibold px-4">
+                  ✨ Your Journey to Better Habits Starts Here
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold bg-linear-to-r from-purple-600 via-blue-600 to-purple-600 bg-clip-text text-transparent drop-shadow-sm">
                 Build Better Habits,
                 <br />
                 Transform Your Life
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Start small, stay consistent, and watch as daily actions
                 compound into extraordinary results
               </p>
-              <div className="flex gap-4 justify-center">
-                <div className="common-btn">
+              <div className="flex gap-6 justify-center mt-8">
+                <button className="px-8 py-4 bg-linear-to-r from-purple-600 to-blue-600 text-white font-bold rounded-lg shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-105 cursor-pointer">
                   Get Started Free
-                </div>
-                <div className="px-8 py-3 border border-border text-foreground rounded-lg font-semibold cursor-pointer hover:bg-accent transition">
+                </button>
+                <button className="px-8 py-4 border-2 border-purple-600 text-purple-600 font-bold rounded-lg hover:bg-purple-50 transition-all duration-300 transform hover:scale-105 cursor-pointer">
                   Learn More
-                </div>
+                </button>
               </div>
             </div>
           </div>
         </div>
-        {/* Slider Indicator Border */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-          <div className="w-40 h-2 rounded-full bg-primary border border-primary"></div>
-        </div>
+
       </section>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default HomeBanner;

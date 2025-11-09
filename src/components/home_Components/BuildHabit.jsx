@@ -1,15 +1,21 @@
-import React from 'react';
+import React from "react";
 
 const BuildHabit = () => {
-    return (
-        <div>
-                  <section className="py-20 px-4 bg-accent/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
+  return (
+    <div>
+      <section className="py-24 px-4 bg-linear-to-bl from-blue-50 via-white to-indigo-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds.png')] opacity-10"></div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-block px-4 py-2 bg-blue-100 rounded-full mb-4">
+              <span className="text-blue-600 font-medium">
+                💪 Build Your Future
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
               Why Build Habits?
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Small consistent actions lead to remarkable transformations over
               time
             </p>
@@ -17,109 +23,93 @@ const BuildHabit = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Feature 1 */}
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                <svg
-                  className="w-8 h-8 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
+            <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <div className="relative mb-6">
+                <div className="w-16 h-16 bg-linear-to-tr from-blue-600 to-indigo-600 rounded-2xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-blue-100 rounded-2xl transform rotate-6 group-hover:rotate-0 transition-transform duration-300 flex items-center justify-center">
+                    <img
+                      src="https://img.icons8.com/?size=128&id=52550&format=png"
+                      alt=""
+                      className="h-10 w-10"
+                    />
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
                 Compound Growth
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-gray-600 leading-relaxed">
                 1% better each day leads to 37x improvement in a year
               </p>
             </div>
 
             {/* Feature 2 */}
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                <svg
-                  className="w-8 h-8 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+            <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <div className="relative mb-6">
+                <div className="w-16 h-16 bg-linear-to-tr from-purple-600 to-pink-600 rounded-2xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-purple-100 rounded-2xl transform rotate-6 group-hover:rotate-0 transition-transform duration-300 flex items-center justify-center">
+                    <img
+                      src="https://img.icons8.com/?size=128&id=PZlBgZ6X9dEb&format=png"
+                      alt=""
+                      className="h-10 w-10"
+                    />
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
                 Consistency
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-gray-600 leading-relaxed">
                 Build lasting change through daily repetition and dedication
               </p>
             </div>
 
             {/* Feature 3 */}
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                <svg
-                  className="w-8 h-8 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+            <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <div className="relative mb-6">
+                <div className="w-16 h-16 bg-linear-to-tr from-green-600 to-teal-600 rounded-2xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-green-100 rounded-2xl transform rotate-6 group-hover:rotate-0 transition-transform duration-300 flex items-center justify-center">
+                    <img
+                      src="https://img.icons8.com/?size=100&id=34&format=png"
+                      alt=""
+                      className="h-10 w-10"
+                    />
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
                 Save Time
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-gray-600 leading-relaxed">
                 Automate good behaviors and free mental energy for creativity
               </p>
             </div>
 
             {/* Feature 4 */}
-            <div className="text-center space-y-4">
-              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                <svg
-                  className="w-8 h-8 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
-                  />
-                </svg>
+            <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <div className="relative mb-6">
+                <div className="w-16 h-16 bg-linear-to-tr from-amber-600 to-orange-600 rounded-2xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-amber-100 rounded-2xl transform rotate-6 group-hover:rotate-0 transition-transform duration-300 flex items-center justify-center">
+                    <img
+                      src="https://img.icons8.com/?size=160&id=114072&format=png"
+                      alt=""
+                      className="h-10 w-10"
+                    />
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
                 Proven Results
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-gray-600 leading-relaxed">
                 Science-backed strategies used by top performers worldwide
               </p>
             </div>
           </div>
         </div>
       </section>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default BuildHabit;

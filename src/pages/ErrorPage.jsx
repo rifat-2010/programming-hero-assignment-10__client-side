@@ -1,5 +1,3 @@
-import React from 'react';
-import error_img from '../assets/error-404.png'
 import { NavLink } from 'react-router';
 const ErrorPage = () => {
     return (
