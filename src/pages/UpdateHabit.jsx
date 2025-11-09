@@ -1,15 +1,18 @@
-import { use } from "react";
-import { AuthContext } from "../context/AuthContext";
-
-import { useNavigate } from "react-router";
+import React, { useState } from "react";
+import { useLoaderData, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 
-const AddHabit = () => {
-  const { user } = use(AuthContext);
-  // console.log(user);
+const UpdateHabit = () => {
+  const data = useLoaderData();
+  const habit = data.result;
+  // console.log(habit)
   const navigate = useNavigate();
+  // for live instant update
+  const [refetch, setRefecth] = useState(false);
 
   const handleSubmit = (e) => {
+    navigate(`/Habit_Details_page/${habit._id}`);
+
     e.preventDefault();
 
     const formData = {
@@ -17,15 +20,10 @@ const AddHabit = () => {
       category: e.target.category.value,
       description: e.target.description.value,
       imageUrl: e.target.thumbnail.value,
-      createdAt: new Date(),
-      userEmail: user.email,          
     };
-    // console.log(formData);
 
-
-
-    fetch("http://localhost:3000/habits", {
-      method: "POST",
+    fetch(`http://localhost:3000/habits/${habit._id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -33,9 +31,10 @@ const AddHabit = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        navigate("/My_Habits");
-        toast.success("Successfully added!");
         console.log(data);
+        // for live instant update
+        setRefecth(!refetch);
+        toast.success("Successfully updated!");
       })
       .catch((err) => {
         console.log(err);
@@ -46,14 +45,17 @@ const AddHabit = () => {
     <div>
       <div className="card border border-gray-200 bg-base-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl my-10">
         <div className="card-body p-6 relative">
-          <h2 className="text-2xl font-bold text-center mb-6">Add New Habit</h2>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <h2 className="text-2xl font-bold text-center mb-6">
+            Update Your Habit
+          </h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
             {/* Name Field */}
             <div>
               <label className="label font-medium">Name</label>
               <input
                 type="text"
                 name="name"
+                defaultValue={habit.title}
                 required
                 className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
                 placeholder="Enter your new habit name"
@@ -64,7 +66,7 @@ const AddHabit = () => {
             <div>
               <label className="label font-medium">Category</label>
               <select
-                defaultValue={""}
+                defaultValue={habit.category}
                 name="category"
                 required
                 className="select w-full rounded-full focus:border-0 focus:outline-gray-200"
@@ -85,6 +87,7 @@ const AddHabit = () => {
               <label className="label font-medium">Description</label>
               <textarea
                 name="description"
+                defaultValue={habit.description}
                 required
                 rows="3"
                 className="textarea w-full rounded-2xl focus:border-0 focus:outline-gray-200 h-[250px]"
@@ -98,31 +101,10 @@ const AddHabit = () => {
               <input
                 type="url"
                 name="thumbnail"
+                defaultValue={habit.imageUrl}
                 required
                 className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
                 placeholder="https://example.com/image.jpg"
-              />
-            </div>
-
-            {/* user current login Email */}
-            <div>
-              <label className="label font-medium">User Current Email</label>
-              <input
-                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
-                placeholder="Enter your new habit name"
-                value={user.email || "No Email"} // default value
-                readOnly // user can't change
-              />
-            </div>
-
-            {/* user current login Name*/}
-            <div>
-              <label className="label font-medium">User Current Name</label>
-              <input
-                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
-                placeholder="Enter your new habit name"
-                value={user.displayName || "No Name"} // default value
-                readOnly // user can't change
               />
             </div>
 
@@ -137,4 +119,4 @@ const AddHabit = () => {
   );
 };
 
-export default AddHabit;
+export default UpdateHabit;

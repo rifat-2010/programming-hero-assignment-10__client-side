@@ -46,10 +46,10 @@ const HabitDetails = () => {
 
             <div className="flex gap-3 mt-6">
               <Link
-                // to={`/update-model/${model._id}`}
+                 to={`/Updated_Habit_page/${habit._id}`}
                 className="common-btn"
               >
-                Update Model
+                Update Habit
               </Link>
               <button
                 // onClick={handleDownload}

@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 import { HashLoader } from "react-spinners";
+import logo from "../assets/habit-tracker.png";
 
 
 
@@ -30,9 +31,9 @@ const handleSignout = () => {
       <div className="flex items-center justify-between mx-10">
         {/* mobile device row reverse and some gap */}
         <div className="flex flex-row-reverse gap-5 md:gap-10">
-        <figure className="flex gap-2">
-        <img src="https://img.freepik.com/premium-vector/habit-tracker-lettering-modern-hand-written-text-sticker-planner-bright-habit-tracker-text-planning-concept-vector-illustration_565728-508.jpg" alt="" className="w-12 h-12"/>
-         <h1 className="text-2xl font-bold">RAndom name</h1>
+        <figure className="flex gap-2 items-center">
+        <img src={logo} alt="" className="w-12 h-12"/>
+         <h1 className="text-2xl font-bold">Habit_Tracker</h1>
         </figure>
 
       {/* mobile and md:device dropdown nav code */}

@@ -10,6 +10,7 @@ import PrivateRoute from "../privateRoute/PrivateRoute";
 import ErrorPage from "../pages/ErrorPage";
 import Loading from "../components/Loading";
 import HabitDetails from "../pages/HabitDetails";
+import UpdateHabit from "../pages/UpdateHabit";
 
 
 export const router = createBrowserRouter([
@@ -39,6 +40,11 @@ export const router = createBrowserRouter([
         {
             path: '/Habit_Details_page/:id',
             element: <PrivateRoute><HabitDetails/></PrivateRoute>,
+            loader: ({params}) => fetch(`http://localhost:3000/habits/${params.id}`),
+        },
+        {
+            path: '/Updated_Habit_page/:id',
+            element: <PrivateRoute><UpdateHabit/></PrivateRoute>,
             loader: ({params}) => fetch(`http://localhost:3000/habits/${params.id}`),
         },
         {
