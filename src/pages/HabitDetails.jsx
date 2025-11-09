@@ -1,6 +1,7 @@
 import React from 'react';
 // import { use, useEffect, useState } from "react";
-import { Link, useLoaderData, useNavigate, useParams } from "react-router";
+import { Link, Navigate, useLoaderData, useNavigate, useParams } from "react-router";
+import Swal from 'sweetalert2';
 
 
 
@@ -9,7 +10,46 @@ const HabitDetails = () => {
 
     const data = useLoaderData();
     const habit = data.result;
+    const Navigate = useNavigate();
     console.log(habit)
+
+
+
+      //delet function 
+  const handleDlete = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/habits/${habit._id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            Navigate("/Public_Habits");
+
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success",
+            });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    });
+  };
 
 
     return (
@@ -58,7 +98,7 @@ const HabitDetails = () => {
                 Download
               </button>
               <button
-                // onClick={handleDlete}
+                onClick={handleDlete}
                 className="btn btn-outline rounded-full border-gray-300 hover:border-blue-500 hover:text-blue-600 mt-1"
               >
                 Delete
