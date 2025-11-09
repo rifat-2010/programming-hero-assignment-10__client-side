@@ -31,7 +31,7 @@ const handleSignout = () => {
         {/* mobile device row reverse and some gap */}
         <div className="flex flex-row-reverse gap-5 md:gap-10">
         <figure className="flex gap-2">
-
+        <img src="https://img.freepik.com/premium-vector/habit-tracker-lettering-modern-hand-written-text-sticker-planner-bright-habit-tracker-text-planning-concept-vector-illustration_565728-508.jpg" alt="" className="w-12 h-12"/>
          <h1 className="text-2xl font-bold">RAndom name</h1>
         </figure>
 
@@ -98,21 +98,21 @@ const handleSignout = () => {
     {loading ? <HashLoader color="red"/> : user ?
 
 // dropdown menu option when user will be login
-  <div className="text-center space-y-3 relative group">
+  <div className="text-center space-y-2 relative group">
 
     <img
         src={user?.photoURL || "https://img.icons8.com/?size=100&id=Y5jFcXHxQBkf&format=png"}
-        className="h-12 w-12 rounded-full border-2 border-orange-600 object-cover cursor-pointer mx-auto"
+        className="h-12 w-12 rounded-full border-2 border-blue-600 object-cover cursor-pointer mx-auto"
         alt="user-photot"
     />
 
-    <div className="dropdown menu w-52 rounded-box bg-white shadow-lg flex flex-col gap-3 p-4 absolute right-0 z-50 
+    <div className="dropdown menu w-72 rounded-box bg-white shadow-lg flex flex-col gap-3 p-4 absolute right-0 z-50 
         opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 ease-in-out">
 
         <h2 className="text-black text-xl font-semibold">{user?.displayName || 'No Name'}</h2>
         <p className=" font-black">{user?.email || 'No Email'}</p>
 
-        <button onClick={handleSignout} className="my-btn bg-red-500 text-white px-3 py-1 rounded">
+        <button onClick={handleSignout} className="my-btn bg-blue-500 text-white px-3 py-1 rounded">
             Sign Out
         </button>
     </div>
