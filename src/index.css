@@ -3,7 +3,7 @@
 
 #navUl a.active {
   text-decoration: underline;
-  color: #c8833e; 
+  color: var(--color-primary);
   font-weight: 600;
 }
 
@@ -24,7 +24,7 @@
   padding-right: 2rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
- background-color: var(--color-primary);
+  background-color: var(--color-primary);
   color: #ffffff;
   border-radius: 0.5rem;
   font-weight: 600;

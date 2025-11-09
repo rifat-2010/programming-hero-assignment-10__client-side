@@ -32,7 +32,7 @@ const handleSignout = () => {
         {/* mobile device row reverse and some gap */}
         <div className="flex flex-row-reverse gap-5 md:gap-10">
         <figure className="flex gap-2 items-center">
-        <img src={logo} alt="" className="w-12 h-12"/>
+        <img src={logo} alt="" className="w-15 h-15"/>
          <h1 className="text-2xl font-bold">Habit_Tracker</h1>
         </figure>
 
