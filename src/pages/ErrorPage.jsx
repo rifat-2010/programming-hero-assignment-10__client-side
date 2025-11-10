@@ -5,7 +5,8 @@ const ErrorPage = () => {
             {/* page title */}
             <title>Error-Page😢</title>
             <div>
-                <img src="https://cdn.dribbble.com/userupload/24450589/file/original-7a69eb5b87401ce59325c3291535aebc.gif" alt="error-page-img"/>
+                <img src="https://cdn.dribbble.com/userupload/24450589/file/original-7a69eb5b87401ce59325c3291535aebc.gif"   alt="error-page-img"
+                className='w-full h-[450px] object-contain' />
                 <div className='flex flex-col mb-10 gap-4 justify-center items-center'>
                     <h1 className='text-[48px] font-bold text-center'>Oops, page not found!</h1>
                     <p className='text-xl font-normal text-gray-700 text-center' >The page you are looking for is not available.</p>

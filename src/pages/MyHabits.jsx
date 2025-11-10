@@ -6,9 +6,6 @@ import { Link } from 'react-router';
 
 
 
-
-
-
 const MyHabits = () => {
     const {user} = use(AuthContext)
     const [habits, setHabits] = useState([]);
@@ -34,8 +31,6 @@ const MyHabits = () => {
 
 
     
-
-
 
       //delet function 
 const handleDelete = (id) => {
@@ -67,7 +62,6 @@ const handleDelete = (id) => {
 
 
 
-
     // for loading
     if(loading){
       return  <Loading/>
@@ -75,8 +69,8 @@ const handleDelete = (id) => {
 
 
     return (
-        <div className='lg:mx-10'>
-           <div className="w-full lg:max-w-auto p-6">
+  <div className='lg:mx-10'>
+  <div className="w-full lg:max-w-auto p-6">
   <h1 className="text-2xl font-bold mb-6 text-center">My Habits</h1>
 
   <div className="overflow-x-auto shadow-lg rounded-lg">

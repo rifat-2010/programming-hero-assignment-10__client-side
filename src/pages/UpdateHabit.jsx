@@ -11,8 +11,6 @@ const UpdateHabit = () => {
   const [refetch, setRefecth] = useState(false);
 
   const handleSubmit = (e) => {
-    navigate(`/Habit_Details_page/${habit._id}`);
-
     e.preventDefault();
 
     const formData = {
@@ -32,6 +30,7 @@ const UpdateHabit = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        navigate(`/Habit_Details_page/${habit._id}`);
         // for live instant update
         setRefecth(!refetch);
         toast.success("Successfully updated!");
