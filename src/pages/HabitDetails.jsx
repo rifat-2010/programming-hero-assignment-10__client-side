@@ -1,6 +1,7 @@
 import React from 'react';
 // import { use, useEffect, useState } from "react";
-import { Link, Navigate, useLoaderData, useNavigate, useParams } from "react-router";
+import { Link, useLoaderData, useNavigate} from "react-router";
+import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 
 
@@ -37,7 +38,6 @@ const HabitDetails = () => {
           .then((data) => {
             console.log(data);
             Navigate("/Public_Habits");
-
             Swal.fire({
               title: "Deleted!",
               text: "Your file has been deleted.",
@@ -46,6 +46,7 @@ const HabitDetails = () => {
           })
           .catch((err) => {
             console.log(err);
+            toast.error(err);
           });
       }
     });
@@ -95,7 +96,7 @@ const HabitDetails = () => {
                 // onClick={handleDownload}
                 className="px-4  border border-border text-foreground rounded-lg font-semibold cursor-pointer hover:bg-accent transition"
               >
-                Download
+                Mark Complete
               </button>
               <button
                 onClick={handleDlete}

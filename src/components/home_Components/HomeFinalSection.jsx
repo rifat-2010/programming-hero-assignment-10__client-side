@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const HomeFinalSection = () => {
   return (
@@ -18,9 +19,9 @@ const HomeFinalSection = () => {
             Join thousands of people building better habits every day
           </p>
           <div className="pt-8">
-            <button className="px-10 py-5 bg-linear-to-r from-purple-600 to-blue-600 text-white text-lg font-bold rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-105 transition-all duration-300 cursor-pointer">
+            <Link to={'/Add_Habit'} className="px-10 py-5 bg-linear-to-r from-purple-600 to-blue-600 text-white text-lg font-bold rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-105 transition-all duration-300 cursor-pointer">
               Start Your Journey Today
-            </button>
+            </Link>
           </div>
         </div>
       </section>

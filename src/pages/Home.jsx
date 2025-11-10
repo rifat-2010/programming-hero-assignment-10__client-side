@@ -10,8 +10,10 @@ import { useLoaderData } from "react-router";
 import HabitCard from "../components/HabitCard";
 
 const Home = () => {
+
   const data = useLoaderData();
-  console.log(data);
+  // console.log(data); 
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -21,7 +23,7 @@ const Home = () => {
       <HomeBanner></HomeBanner>
 
       {/* Featured Habits Section */}
-      <section className="py-24 px-4 bg-gradient-to-b from-white to-purple-50">
+      <section className="py-24 px-4 bg-linear-to-b from-white to-purple-50">
         {/* title bar */}
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
