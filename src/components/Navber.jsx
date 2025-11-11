@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import { toast } from "react-toastify";
@@ -6,13 +6,25 @@ import { signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 import { HashLoader } from "react-spinners";
 import logo from "../assets/habit-tracker.png";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 
 
 const Navbar = () => {
 const {user, setUser, loading} = useContext(AuthContext);
 // console.log(loading, user);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || "light");
 
+
+    useEffect(() => {
+    const html = document.querySelector('html')
+     html.setAttribute("data-theme", theme)
+     localStorage.setItem("theme", theme)
+  }, [theme])
+
+  const handleTheme = (checked) => {
+    setTheme(checked ? "dark": "light")
+  }
 
 // signOut function
 const handleSignout = () => {
@@ -26,13 +38,20 @@ const handleSignout = () => {
     });
 };
 
+
+
   return (
-    <div className=" bg-slate-100 py-2.5 border-b border-b-slate-300 md:w-11/12 mx-auto w-full ">
+     <div className={
+        theme === "dark" 
+        ? "bg-gray-800 text-white py-2.5 border-b border-b-gray-700 md:w-11/12 mx-auto w-full"
+        : "bg-slate-100 py-2.5 border-b border-b-slate-300 md:w-11/12 mx-auto w-full"
+    }>
+ 
       <div className="flex items-center justify-between mx-10">
         {/* mobile device row reverse and some gap */}
         <div className="flex flex-row-reverse gap-5 md:gap-10">
         <figure className="flex gap-2 items-center">
-        <img src={logo} alt="" className="w-15 h-15"/>
+        <img src={logo} alt="" className="w-15 h-15 rounded-full"/>
          <h1 className="text-2xl font-bold">Habit_Tracker</h1>
         </figure>
 
@@ -95,12 +114,21 @@ const handleSignout = () => {
     </ul>
 
 
+    <div className="flex gap-2 items-center">
+      {
+        theme === "dark" ? <MdDarkMode size={30}/> : <MdLightMode size={30}/> 
+      }
+        <input
+           onChange={(e)=> handleTheme(e.target.checked)}
+           type="checkbox"
+           defaultChecked={localStorage.getItem('theme') === "dark"}
+           className="toggle"/>
 
     {loading ? <HashLoader color="red"/> : user ?
 
 // dropdown menu option when user will be login
   <div className="text-center space-y-2 relative group">
-
+    
     <img
         src={user?.photoURL || "https://img.icons8.com/?size=100&id=Y5jFcXHxQBkf&format=png"}
         className="h-12 w-12 rounded-full border-2 border-blue-600 object-cover cursor-pointer mx-auto"
@@ -127,6 +155,7 @@ const handleSignout = () => {
 }
    
       </div>
+    </div>
     </div>
 )};
 
