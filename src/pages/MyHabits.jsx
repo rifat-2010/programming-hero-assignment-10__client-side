@@ -3,6 +3,7 @@ import { AuthContext } from '../context/AuthContext';
 import Loading from '../components/Loading';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router';
+import { toast } from 'react-toastify';
 
 
 
@@ -10,7 +11,7 @@ const MyHabits = () => {
     const {user} = use(AuthContext)
     const [habits, setHabits] = useState([]);
     const [loading, setLoading] = useState(true);
-    // console.log(habits)
+
 
     useEffect(()=> {
         if(user){
@@ -57,6 +58,32 @@ const handleDelete = (id) => {
           Swal.fire("Deleted!", "Your habit has been deleted.", "success");
         });
     }
+  });
+};
+
+
+
+const handleMarkComplete = (id) => {
+  fetch(`http://localhost:3000/habits/${id}/complete`, {
+    method: "PATCH",
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+
+    if (data.message === "Already completed today") {
+      toast.error("Already completed today!");
+      return;
+    }
+
+    toast.success("Marked as completed!");
+
+setHabits(prev => ({
+  ...prev,
+  currentStreak: data.currentStreak,
+  completionHistory: data.completionHistory
+}));
+
   });
 };
 
@@ -114,9 +141,9 @@ const handleDelete = (id) => {
 
             {/* Mark Complete button */}
             <td>
-              <button className="btn btn-sm bg-green-500 text-white hover:bg-green-600">
+              <buttono onClick={() => handleMarkComplete(habit._id)} className="btn btn-sm bg-green-500 text-white hover:bg-green-600">
                 ✅ Mark Complete
-              </button>
+              </buttono>
             </td>
           </tr>
         ))}

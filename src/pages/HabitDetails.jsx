@@ -10,7 +10,7 @@ const HabitDetails = () => {
   const { user } = useContext(AuthContext);
   const [habit, setHabit] = useState(data.result);
 
-  // console.log(user)
+  console.log(habit)
 
   // Calculate completion percentage (last 30 days)
   const completedDays = habit.completionHistory?.length || 0;

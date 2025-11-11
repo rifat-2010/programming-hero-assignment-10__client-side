@@ -8,7 +8,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-linear-to-b from-blue-900 to-blue-800 text-white pt-12 pb-8 px-4 mt-20">
+    <footer className="bg-linear-to-b from-blue-900 to-blue-800 text-white pt-12 pb-8 px-4 ">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-8">
@@ -131,9 +131,9 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="px-4 py-2 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent grow text-white placeholder-gray-400"
+                  className="px-4 py-2 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent grow text-black placeholder-gray-400"
                 />
-                <button className="px-4 py-2 bg-white text-blue-900 rounded-lg hover:bg-opacity-90 transition font-medium">
+                <button className="px-4 py-2 bg-white text-blue-900 rounded-lg hover:bg-opacity-90 transition font-medium cursor-pointer hover:bg-blue-600 hover:text-white">
                   Join
                 </button>
               </div>

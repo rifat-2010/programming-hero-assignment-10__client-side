@@ -1,10 +1,22 @@
 import React from "react";
+import { Link } from "react-router";
+import { motion } from "framer-motion";
 
 const HomeBanner = () => {
   return (
     <div>
       {/* Hero Banner / Slider */}
-      <section className="relative h-[600px] overflow-hidden bg-linear-to-br from-purple-100 via-blue-50 to-white">
+      <motion.section
+        className="relative h-[600px] overflow-hidden bg-linear-to-br from-purple-100 via-blue-50 to-white"
+       initial={{
+            y: 200,
+          }}
+          animate={{ y: 0 }}
+          transition={{
+            duration: 1,
+            delay: 0,
+          }}
+      >
         <div className="absolute inset-0 flex">
           {/* Slide 1 */}
           <div className="min-w-full flex items-center justify-center px-4">
@@ -24,9 +36,12 @@ const HomeBanner = () => {
                 compound into extraordinary results
               </p>
               <div className="flex gap-6 justify-center mt-8">
-                <button className="px-8 py-4 bg-linear-to-r from-purple-600 to-blue-600 text-white font-bold rounded-lg shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                <Link
+                  to={"/Add_Habit"}
+                  className="px-8 py-4 bg-linear-to-r from-purple-600 to-blue-600 text-white font-bold rounded-lg shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-105 cursor-pointer"
+                >
                   Get Started Free
-                </button>
+                </Link>
                 <button className="px-8 py-4 border-2 border-purple-600 text-purple-600 font-bold rounded-lg hover:bg-purple-50 transition-all duration-300 transform hover:scale-105 cursor-pointer">
                   Learn More
                 </button>
@@ -34,8 +49,7 @@ const HomeBanner = () => {
             </div>
           </div>
         </div>
-
-      </section>
+      </motion.section>
     </div>
   );
 };
