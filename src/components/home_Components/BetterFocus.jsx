@@ -7,6 +7,7 @@ import better_focus_img from "../../assets/better-focus-img.jpg";
 const BetterFocus = () => {
   return (
     <div>
+      
       <section className="py-24 px-4 bg-[#F4F7FE] relative overflow-hidden">
         {/* Animated background elements */}
 

@@ -3,8 +3,7 @@ import React from "react";
 const WorkSection = () => {
   return (
     <div>
-      <section className="py-24 px-4 bg-linear-to-tr from-indigo-50 via-white to-purple-50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')] opacity-10"></div>
+      <section className="py-24 px-4 bg-linear-to-tr from-indigo-300 via-pink-200 to-purple-300 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
             <div className="inline-block px-4 py-2 bg-indigo-100 rounded-full mb-4">

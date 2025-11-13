@@ -8,7 +8,7 @@ const HomeBanner = () => {
     <div>
       {/* Hero Banner / Slider */}
       <motion.section
-        className="relative h-[600px] overflow-hidden bg-linear-to-br from-purple-100 via-blue-50 to-white"
+        className="relative h-[600px] overflow-hidden bg-linear-to-br from-purple-300 via-blue-200 to-purple-100"
         initial={{
           y: 200,
         }}

@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const HomeFinalSection = () => {
   return (
     <div>
-      <section className="py-32 px-4 bg-linear-to-br from-purple-100 via-blue-100 to-white relative overflow-hidden">
+      <section className="py-32 px-4 bg-linear-to-br from-purple-300 via-blue-200 to-purple-100 relative overflow-hidden">
 
         <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
           <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
