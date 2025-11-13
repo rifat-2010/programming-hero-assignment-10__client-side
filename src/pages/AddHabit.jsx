@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 
 const AddHabit = () => {
   const { user } = use(AuthContext);
+  
   // console.log(user);
   const navigate = useNavigate();
 
@@ -38,7 +39,7 @@ const AddHabit = () => {
         console.log(data);
       })
       .catch((err) => {
-        console.log(err);
+        toast.error(err);
       });
   };
 

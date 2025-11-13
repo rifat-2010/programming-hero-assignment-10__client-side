@@ -2,6 +2,7 @@ import React from "react";
 import { FaRegEye } from "react-icons/fa";
 import { FaBoltLightning } from "react-icons/fa6";
 import { SiGoogleanalytics } from "react-icons/si";
+import better_focus_img from "../../assets/better-focus-img.jpg";
 
 const BetterFocus = () => {
   return (
@@ -32,7 +33,7 @@ const BetterFocus = () => {
                 <div className="absolute inset-0 bg-linear-to-r from-blue-400 to-purple-400 rounded-3xl transform rotate-6 opacity-20 blur-xl"></div>
                 <div className="bg-white rounded-3xl p-12 shadow-xl relative">
                   <img
-                    src="https://static.vecteezy.com/system/resources/previews/010/870/647/non_2x/time-to-health-mind-work-meditation-body-man-achievement-person-exercise-focus-harmony-wellbeing-yoga-flat-illustration-concept-business-office-relax-balance-training-workout-zen-pose-vector.jpg"
+                    src={better_focus_img}
                     alt="Focus illustration"
                     className="w-full h-auto transform hover:scale-105 transition-transform duration-500"
                   />

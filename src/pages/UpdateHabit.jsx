@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import { AuthContext } from "../context/AuthContext";
 
 const UpdateHabit = () => {
   const data = useLoaderData();
+   const { user } = use(AuthContext);
   const habit = data.result;
   // console.log(habit)
   const navigate = useNavigate();
@@ -36,7 +38,7 @@ const UpdateHabit = () => {
         toast.success("Successfully updated!");
       })
       .catch((err) => {
-        console.log(err);
+        toast.error(err);
       });
   };
 
@@ -107,9 +109,31 @@ const UpdateHabit = () => {
               />
             </div>
 
+            {/* user current login Email */}
+            <div>
+              <label className="label font-medium">User Current Email</label>
+              <input
+                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+                placeholder="Enter your new habit name"
+                value={user.email || "No Email"} // default value
+                readOnly // user can't change
+              />
+            </div>
+
+            {/* user current login Name*/}
+            <div>
+              <label className="label font-medium">User Current Name</label>
+              <input
+                className="input w-full rounded-full focus:border-0 focus:outline-gray-200"
+                placeholder="Enter your new habit name"
+                value={user.displayName || "No Name"} // default value
+                readOnly // user can't change
+              />
+            </div>
+
             {/* Submit Button */}
             <button type="submit" className="common-btn w-full">
-              Add Habit
+              Update Habit
             </button>
           </form>
         </div>

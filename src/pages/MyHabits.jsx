@@ -2,7 +2,7 @@ import React, { use, useEffect, useState, } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import Loading from '../components/Loading';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 
 
@@ -11,6 +11,9 @@ const MyHabits = () => {
     const {user} = use(AuthContext)
     const [habits, setHabits] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [refetch, setRefecth] = useState(false);
+    const navigate = useNavigate();
+    console.log(habits)
 
 
     useEffect(()=> {
@@ -22,7 +25,7 @@ const MyHabits = () => {
         })
         .then(res=> res.json())
         .then(data=> { 
-            console.log(data)
+            // console.log(data)
             setHabits(data);
             setLoading(false)
         })
@@ -51,7 +54,6 @@ const handleDelete = (id) => {
         .then(res => res.json())
         .then(data => {
           console.log(data);
-
           // remove from UI
           setHabits(prev => prev.filter(h => h._id !== id));
 
@@ -69,23 +71,29 @@ const handleMarkComplete = (id) => {
   })
   .then(res => res.json())
   .then(data => {
-    console.log(data);
-
     if (data.message === "Already completed today") {
       toast.error("Already completed today!");
       return;
     }
 
     toast.success("Marked as completed!");
+    setRefecth(!refetch);
 
-setHabits(prev => ({
-  ...prev,
-  currentStreak: data.currentStreak,
-  completionHistory: data.completionHistory
-}));
-
+    {habits.map(habit => (
+    navigate(`/Habit_Details_page/${habit._id}`)
+    ))}
+    
+    // array_update
+    setHabits(prev =>
+      prev.map(h =>
+        h._id.toString() === id.toString()
+          ? { ...h, currentStreak: data.currentStreak, completionHistory: data.completionHistory }
+          : h
+      )
+    );
   });
 };
+
 
 
 
@@ -141,9 +149,9 @@ setHabits(prev => ({
 
             {/* Mark Complete button */}
             <td>
-              <buttono onClick={() => handleMarkComplete(habit._id)} className="btn btn-sm bg-green-500 text-white hover:bg-green-600">
+              <button onClick={() => handleMarkComplete(habit._id)} className="btn btn-sm bg-green-500 text-white hover:bg-green-600">
                 ✅ Mark Complete
-              </buttono>
+              </button>
             </td>
           </tr>
         ))}

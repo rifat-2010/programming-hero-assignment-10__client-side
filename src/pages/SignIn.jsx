@@ -57,10 +57,6 @@ const SignIn = () => {
       {/* page title */}
       <title>SignIn-Page</title>
 
-      {/* decorative circles */}
-      <div className="absolute -left-16 -top-16 w-72 h-72 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
-      <div className="absolute right-[-64px] bottom-[-64px] w-96 h-96 rounded-full bg-indigo-700/20 blur-3xl pointer-events-none"></div>
-
       <div className="w-full max-w-5xl mx-auto grid grid-cols-12 gap-6 items-stretch">
         {/* left: promo / brand panel (now visible on all sizes, sits above form on small screens) */}
         <div className="col-span-12 md:col-span-5 bg-white/6 rounded-2xl p-6 md:p-8 backdrop-blur-sm border border-white/8 text-white flex flex-col justify-between">

@@ -79,8 +79,6 @@ const SignUp = () => {
     <div className="min-h-[calc(100vh-20px)] flex items-center justify-center bg-linear-to-br from-slate-900 via-indigo-900 to-blue-800 relative overflow-hidden px-4 py-10">
       <title>SignUp-Page</title>
 
-      <div className="absolute -left-16 -top-16 w-72 h-72 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
-      <div className="absolute -right-16 -bottom-16 w-96 h-96 rounded-full bg-indigo-700/20 blur-3xl pointer-events-none"></div>
 
       <div className="w-full max-w-5xl mx-auto grid grid-cols-12 gap-6 items-stretch">
         {/* left promo panel */}

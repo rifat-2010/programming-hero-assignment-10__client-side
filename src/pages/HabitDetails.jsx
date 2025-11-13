@@ -10,7 +10,7 @@ const HabitDetails = () => {
   const { user } = useContext(AuthContext);
   const [habit, setHabit] = useState(data.result);
 
-  console.log(habit)
+  // console.log(habit)
 
   // Calculate completion percentage (last 30 days)
   const completedDays = habit.completionHistory?.length || 0;
@@ -22,7 +22,7 @@ const handleMarkComplete = (id) => {
   })
   .then(res => res.json())
   .then(data => {
-    console.log(data);
+    // console.log(data);
 
     if (data.message === "Already completed today") {
       toast.error("Already completed today!");
@@ -117,7 +117,7 @@ const handleMarkComplete = (id) => {
           <div className="mb-8 inline-flex items-center px-4 py-2 bg-orange-100 text-orange-600 rounded-full">
             <FaFire className="w-5 h-5 mr-2" />
             <span className="font-semibold">
-              {habit.currentStreak}DAILY STREAK : 🔥
+               Streak badge : {habit.currentStreak} Days
             </span>
           </div>
 

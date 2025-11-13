@@ -2,6 +2,8 @@ import React from "react";
 import { FaRegHeart } from "react-icons/fa6";
 import { FaRegSmile } from "react-icons/fa";
 import { MdOutlineDarkMode } from "react-icons/md";
+import Reduced_Stress_img from "../../assets/Reduced-Stress-img.avif";
+
 const ReducedSection = () => {
   return (
     <div>
@@ -88,7 +90,7 @@ const ReducedSection = () => {
                 <div className="absolute inset-0 bg-linear-to-r from-teal-400 to-green-400 rounded-3xl transform rotate-3 opacity-20 blur-xl"></div>
                 <div className="bg-white rounded-3xl p-12 shadow-xl relative">
                   <img
-                    src="https://cdn-res.keymedia.com/cdn-cgi/image/f=auto/https://cdn-res.keymedia.com/cms/images/ca/126/0395_637713903988333939.jpg"
+                    src={Reduced_Stress_img}
                     alt="Stress reduction illustration"
                     className="w-full h-auto transform hover:scale-105 transition-transform duration-500"
                   />

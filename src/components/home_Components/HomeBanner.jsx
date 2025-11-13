@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
 const HomeBanner = () => {
   return (
@@ -8,14 +9,14 @@ const HomeBanner = () => {
       {/* Hero Banner / Slider */}
       <motion.section
         className="relative h-[600px] overflow-hidden bg-linear-to-br from-purple-100 via-blue-50 to-white"
-       initial={{
-            y: 200,
-          }}
-          animate={{ y: 0 }}
-          transition={{
-            duration: 1,
-            delay: 0,
-          }}
+        initial={{
+          y: 200,
+        }}
+        animate={{ y: 0 }}
+        transition={{
+          duration: 1,
+          delay: 0,
+        }}
       >
         <div className="absolute inset-0 flex">
           {/* Slide 1 */}
@@ -23,13 +24,36 @@ const HomeBanner = () => {
             <div className="max-w-4xl text-center space-y-8 relative z-10">
               <div className="inline-block p-2 bg-purple-100 rounded-full mb-4">
                 <span className="text-purple-600 font-semibold px-4">
-                  ✨ Your Journey to Better Habits Starts Here
+                  {/* ✨ Your Journey to Better Habits Starts Here */}
+                  ✨ Your Journey to
+                  <span style={{ color: "red", margin: "10px" }}>
+                    <Typewriter
+                      words={["Better Habits Starts Here", "Mastery Begins Now", "Success Starts Here", "Transformation Awaits"]}
+                      loop={false}
+                      cursor
+                      cursorStyle="|"
+                      typeSpeed={70}
+                      deleteSpeed={50}
+                      delaySpeed={1000}
+                    ></Typewriter>
+                  </span>
                 </span>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold bg-linear-to-r from-purple-600 via-blue-600 to-purple-600 bg-clip-text text-transparent drop-shadow-sm">
                 Build Better Habits,
                 <br />
-                Transform Your Life
+                {/* Transform Your Life */}
+                 <span style={{ color: "red", margin: "10px" }}>
+                    <Typewriter
+                      words={["Transform Your Life", "Master Your Tomorrow", "Unlock Your Potential", "Achieve Lasting Change"]}
+                      loop={false}
+                      cursor
+                      cursorStyle="|"
+                      typeSpeed={70}
+                      deleteSpeed={50}
+                      delaySpeed={1000}
+                    ></Typewriter>
+                  </span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Start small, stay consistent, and watch as daily actions
