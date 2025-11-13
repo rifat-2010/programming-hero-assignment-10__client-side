@@ -5,7 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 
 const UpdateHabit = () => {
   const data = useLoaderData();
-   const { user } = use(AuthContext);
+  const { user } = use(AuthContext);
   const habit = data.result;
   // console.log(habit)
   const navigate = useNavigate();
@@ -22,13 +22,16 @@ const UpdateHabit = () => {
       imageUrl: e.target.thumbnail.value,
     };
 
-    fetch(`http://localhost:3000/habits/${habit._id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
+    fetch(
+      `https://programming-hero-assignment-10.vercel.app/habits/${habit._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -49,7 +52,7 @@ const UpdateHabit = () => {
           <h2 className="text-2xl font-bold text-center mb-6">
             Update Your Habit
           </h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             {/* Name Field */}
             <div>
               <label className="label font-medium">Name</label>

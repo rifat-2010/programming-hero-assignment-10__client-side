@@ -47,12 +47,12 @@ const handleSignout = () => {
         : "bg-slate-100 py-2.5 border-b border-b-slate-300 md:w-11/12 mx-auto w-full"
     }>
  
-      <div className="flex items-center justify-between mx-10">
+      <div className="flex items-center justify-between md:mx-10">
         {/* mobile device row reverse and some gap */}
         <div className="flex flex-row-reverse gap-5 md:gap-10">
         <figure className="flex gap-2 items-center">
-        <img src={logo} alt="" className="w-15 h-15 rounded-full"/>
-         <h1 className="text-2xl font-bold">Habit_Tracker</h1>
+        <img src={logo} alt="" className="w-10 h-10 md:w-15 md:h-15 rounded-full"/>
+         <h1 className="md:text-2xl text-xl font-bold">Habit_Tracker</h1>
         </figure>
 
       {/* mobile and md:device dropdown nav code */}
@@ -131,7 +131,7 @@ const handleSignout = () => {
     
     <img
         src={user?.photoURL || "https://img.icons8.com/?size=100&id=Y5jFcXHxQBkf&format=png"}
-        className="h-12 w-12 rounded-full border-2 border-blue-600 object-cover cursor-pointer mx-auto"
+        className="w-10 h-10 md:h-12 md:w-12 rounded-full border-2 border-blue-600 object-cover cursor-pointer mx-auto" 
         alt="user-photot"
     />
 

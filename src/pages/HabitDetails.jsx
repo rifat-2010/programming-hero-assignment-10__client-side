@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router";
-import { FaFire, FaUser, FaClock, FaEnvelope, FaCheck} from "react-icons/fa";
+import { FaFire, FaUser, FaClock, FaEnvelope, FaCheck } from "react-icons/fa";
 import { AuthContext } from "../context/AuthContext";
 import { ImCross } from "react-icons/im";
 import { toast } from "react-toastify";
@@ -16,29 +16,31 @@ const HabitDetails = () => {
   const completedDays = habit.completionHistory?.length || 0;
   const completionPercentage = Math.round((completedDays / 30) * 100);
 
-const handleMarkComplete = (id) => {
-  fetch(`http://localhost:3000/habits/${id}/complete`, {
-    method: "PATCH",
-  })
-  .then(res => res.json())
-  .then(data => {
-    // console.log(data);
+  const handleMarkComplete = (id) => {
+    fetch(
+      `https://programming-hero-assignment-10.vercel.app/habits/${id}/complete`,
+      {
+        method: "PATCH",
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
 
-    if (data.message === "Already completed today") {
-      toast.error("Already completed today!");
-      return;
-    }
+        if (data.message === "Already completed today") {
+          toast.error("Already completed today!");
+          return;
+        }
 
-    toast.success("Marked as completed!");
+        toast.success("Marked as completed!");
 
-    setHabit(prev => ({
-      ...prev,
-      currentStreak: data.currentStreak,
-      completionHistory: data.completionHistory
-    }));
-  });
-};
-
+        setHabit((prev) => ({
+          ...prev,
+          currentStreak: data.currentStreak,
+          completionHistory: data.completionHistory,
+        }));
+      });
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
@@ -58,17 +60,17 @@ const handleMarkComplete = (id) => {
                   <FaEnvelope className="w-4 h-4" />
                   <span className="text-sm">{user.email}</span>
                 </div>
-                {user.emailVerified ? 
+                {user.emailVerified ? (
                   <div className="flex items-center space-x-1 text-green-300 mt-1">
                     <FaCheck className="w-4 h-4" />
                     <span className="text-xs">Verified Account</span>
                   </div>
-                 : 
-                <div className="flex items-center space-x-1 text-red-500 mt-1">
+                ) : (
+                  <div className="flex items-center space-x-1 text-red-500 mt-1">
                     <ImCross className="w-4 h-4" />
                     <span className="text-xs">Not Verified Account</span>
                   </div>
-                }
+                )}
               </div>
             </div>
           </div>
@@ -117,7 +119,7 @@ const handleMarkComplete = (id) => {
           <div className="mb-8 inline-flex items-center px-4 py-2 bg-orange-100 text-orange-600 rounded-full">
             <FaFire className="w-5 h-5 mr-2" />
             <span className="font-semibold">
-               Streak badge : {habit.currentStreak} Days
+              Streak badge : {habit.currentStreak} Days
             </span>
           </div>
 
@@ -146,7 +148,10 @@ const handleMarkComplete = (id) => {
           </div>
 
           {/* Action Button */}
-          <button onClick={() => handleMarkComplete(habit._id)} className="px-10 py-5 bg-linear-to-r from-purple-600 to-blue-600 text-white text-lg font-bold rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-105 transition-all duration-300 cursor-pointer w-full">
+          <button
+            onClick={() => handleMarkComplete(habit._id)}
+            className="px-10 py-5 bg-linear-to-r from-purple-600 to-blue-600 text-white text-lg font-bold rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-105 transition-all duration-300 cursor-pointer w-full"
+          >
             MARK COMPLETE
           </button>
         </div>

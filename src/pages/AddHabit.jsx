@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const AddHabit = () => {
   const { user } = use(AuthContext);
-  
+
   // console.log(user);
   const navigate = useNavigate();
 
@@ -19,13 +19,11 @@ const AddHabit = () => {
       description: e.target.description.value,
       imageUrl: e.target.thumbnail.value,
       createdAt: new Date(),
-      userEmail: user.email,          
+      userEmail: user.email,
     };
     // console.log(formData);
 
-
-
-    fetch("http://localhost:3000/habits", {
+    fetch("https://programming-hero-assignment-10.vercel.app/habits", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

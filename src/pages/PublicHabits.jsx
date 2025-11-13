@@ -13,7 +13,7 @@ const PublicHabits = () => {
   const loadHabits = async (s, c) => {
     setLoading(true);
     const res = await fetch(
-      `http://localhost:3000/search?search=${s}&category=${c}`
+      `https://programming-hero-assignment-10.vercel.app/search?search=${s}&category=${c}`
     );
     const data = await res.json();
     setHabits(data);
@@ -30,8 +30,6 @@ const PublicHabits = () => {
     loadHabits(value, category);
   };
 
-
-
   return (
     <section className="py-20 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-8">
@@ -43,7 +41,7 @@ const PublicHabits = () => {
 
       {/* Search + Category */}
       <div className="flex gap-3 justify-center mb-8 items-center">
-        <FaSearch size={30}/>
+        <FaSearch size={30} />
         <input
           type="search"
           placeholder="Search habits..."
@@ -52,7 +50,7 @@ const PublicHabits = () => {
         />
       </div>
 
-      {loading && <Loading/>}
+      {loading && <Loading />}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {habits.map((habit) => (

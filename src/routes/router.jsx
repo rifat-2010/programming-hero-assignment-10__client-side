@@ -12,50 +12,75 @@ import Loading from "../components/Loading";
 import HabitDetails from "../pages/HabitDetails";
 import UpdateHabit from "../pages/UpdateHabit";
 
-
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout/>,
+    element: <MainLayout />,
     errorElement: <ErrorPage />,
     hydrateFallbackElement: <Loading></Loading>,
     children: [
-        {
-            path: '/',
-            element: <Home/>,
-            loader: () => fetch('http://localhost:3000/latest-habits'),
-        },
-        {
-            path: '/Add_Habit',
-            element: <PrivateRoute><AddHabit/></PrivateRoute>,
-        },
-        {
-            path: '/My_Habits',
-            element: <PrivateRoute><MyHabits/></PrivateRoute>,
-        },
-        {
-            path: '/Public_Habits',
-            element: <PublicHabits/>,
-            loader: () => fetch('http://localhost:3000/habits'),
-        },
-        {
-            path: '/Habit_Details_page/:id',
-            element: <PrivateRoute><HabitDetails/></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:3000/habits/${params.id}`),
-        },
-        {
-            path: '/Updated_Habit_page/:id',
-            element: <PrivateRoute><UpdateHabit/></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:3000/habits/${params.id}`),
-        },
-        {
-        path: '/signIn-page',
-       element: <SignIn/>,
+      {
+        path: "/",
+        element: <Home />,
+        loader: () =>
+          fetch(
+            "https://programming-hero-assignment-10.vercel.app/latest-habits"
+          ),
       },
       {
-        path: '/signUp-page',
-       element: <SignUp/>,
+        path: "/Add_Habit",
+        element: (
+          <PrivateRoute>
+            <AddHabit />
+          </PrivateRoute>
+        ),
       },
-    ]
+      {
+        path: "/My_Habits",
+        element: (
+          <PrivateRoute>
+            <MyHabits />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/Public_Habits",
+        element: <PublicHabits />,
+        loader: () =>
+          fetch("https://programming-hero-assignment-10.vercel.app/habits"),
+      },
+      {
+        path: "/Habit_Details_page/:id",
+        element: (
+          <PrivateRoute>
+            <HabitDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://programming-hero-assignment-10.vercel.app/habits/${params.id}`
+          ),
+      },
+      {
+        path: "/Updated_Habit_page/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateHabit />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://programming-hero-assignment-10.vercel.app/habits/${params.id}`
+          ),
+      },
+      {
+        path: "/signIn-page",
+        element: <SignIn />,
+      },
+      {
+        path: "/signUp-page",
+        element: <SignUp />,
+      },
+    ],
   },
 ]);
