@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router";
+import { Typewriter } from "react-simple-typewriter";
 
 const HomeFinalSection = () => {
   return (
-    <div>
+    <div data-aos="fade-up">
       <section className="py-32 px-4 bg-linear-to-br from-purple-300 via-blue-200 to-purple-100 relative overflow-hidden">
-
         <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
           <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
             <span className="text-purple-600 font-medium">
@@ -16,10 +16,30 @@ const HomeFinalSection = () => {
             Ready to Transform Your Life?
           </h2>
           <p className="text-xl md:text-2xl text-gray-600">
-            Join thousands of people building better habits every day
+            Join thousands of people building better habits every day.{" "}
+            <span className="text-purple-600 font-semibold">
+              <Typewriter
+                words={[
+                  "Transform Your Life",
+                  "Master Your Tomorrow",
+                  "Unlock Your Potential",
+                  "Achieve Lasting Change",
+                ]}
+                loop={false}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
           </p>
+
           <div className="pt-8">
-            <Link to={'/Add_Habit'} className="px-10 py-5 bg-linear-to-r from-purple-600 to-blue-600 text-white text-lg font-bold rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-105 transition-all duration-300 cursor-pointer">
+            <Link
+              to={"/Add_Habit"}
+              className="px-10 py-5 bg-linear-to-r from-purple-600 to-blue-600 text-white text-lg font-bold rounded-xl shadow-2xl hover:shadow-purple-500/30 transform hover:scale-105 transition-all duration-300 cursor-pointer"
+            >
               Start Your Journey Today
             </Link>
           </div>

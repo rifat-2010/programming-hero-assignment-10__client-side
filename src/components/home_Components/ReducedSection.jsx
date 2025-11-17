@@ -6,7 +6,7 @@ import Reduced_Stress_img from "../../assets/Reduced-Stress-img.avif";
 
 const ReducedSection = () => {
   return (
-    <div>
+    <div  data-aos="fade-up" >
       {/* Reduced Stress Section */}
       <section className="py-24 px-4 bg-[#F6FEF9] relative overflow-hidden">
         {/* Animated background elements */}
@@ -32,7 +32,7 @@ const ReducedSection = () => {
 
             {/* Content Side */}
             <div className="space-y-8">
-              <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+              <div data-aos="fade-right"  className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
                 <div className="flex gap-6">
                   <div className="shrink-0 w-14 h-14 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
                     <FaRegHeart className="w-6 h-6" />
@@ -49,7 +49,7 @@ const ReducedSection = () => {
                 </div>
               </div>
 
-              <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+              <div data-aos="fade-right"  className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
                 <div className="flex gap-6">
                   <div className="shrink-0 w-14 h-14 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300">
                     <FaRegSmile className="w-6 h-6" />
@@ -66,7 +66,7 @@ const ReducedSection = () => {
                 </div>
               </div>
 
-              <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+              <div data-aos="fade-right"  className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
                 <div className="flex gap-6">
                   <div className="shrink-0 w-14 h-14 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300">
                     <MdOutlineDarkMode className="w-6 h-6" />
@@ -85,7 +85,7 @@ const ReducedSection = () => {
             </div>
 
             {/* Visual Side */}
-            <div>
+            <div data-aos="fade-left">
               <div className="relative">
                 <div className="absolute inset-0 bg-linear-to-r from-teal-400 to-green-400 rounded-3xl transform rotate-3 opacity-20 blur-xl"></div>
                 <div className="bg-white rounded-3xl p-12 shadow-xl relative">

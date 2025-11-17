@@ -23,7 +23,7 @@ const Home = () => {
       <HomeBanner></HomeBanner>
 
       {/* Featured Habits Section */}
-      <section className="py-24 px-4 bg-linear-to-b from-white to-purple-50">
+      <section data-aos="fade-up" className="py-24 px-4 bg-linear-to-b from-white to-purple-50">
         {/* title bar */}
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">

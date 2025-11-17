@@ -2,7 +2,7 @@ import React from "react";
 
 const BuildHabit = () => {
   return (
-    <div>
+    <div data-aos="fade-up">
       <section className="py-24 px-4 bg-linear-to-bl from-blue-50 via-white to-indigo-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds.png')] opacity-10"></div>
         <div className="max-w-7xl mx-auto relative z-10">
@@ -23,7 +23,7 @@ const BuildHabit = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Feature 1 */}
-            <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <div  data-aos="fade-right" className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               <div className="relative mb-6">
                 <div className="w-16 h-16 bg-linear-to-tr from-blue-600 to-indigo-600 rounded-2xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-300">
                   <div className="w-16 h-16 bg-blue-100 rounded-2xl transform rotate-6 group-hover:rotate-0 transition-transform duration-300 flex items-center justify-center">
@@ -44,7 +44,7 @@ const BuildHabit = () => {
             </div>
 
             {/* Feature 2 */}
-            <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <div  data-aos="fade-down" className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               <div className="relative mb-6">
                 <div className="w-16 h-16 bg-linear-to-tr from-purple-600 to-pink-600 rounded-2xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-300">
                   <div className="w-16 h-16 bg-purple-100 rounded-2xl transform rotate-6 group-hover:rotate-0 transition-transform duration-300 flex items-center justify-center">
@@ -65,7 +65,7 @@ const BuildHabit = () => {
             </div>
 
             {/* Feature 3 */}
-            <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <div  data-aos="fade-down" className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               <div className="relative mb-6">
                 <div className="w-16 h-16 bg-linear-to-tr from-green-600 to-teal-600 rounded-2xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-300">
                   <div className="w-16 h-16 bg-green-100 rounded-2xl transform rotate-6 group-hover:rotate-0 transition-transform duration-300 flex items-center justify-center">
@@ -86,7 +86,7 @@ const BuildHabit = () => {
             </div>
 
             {/* Feature 4 */}
-            <div className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+            <div  data-aos="fade-left" className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               <div className="relative mb-6">
                 <div className="w-16 h-16 bg-linear-to-tr from-amber-600 to-orange-600 rounded-2xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-300">
                   <div className="w-16 h-16 bg-amber-100 rounded-2xl transform rotate-6 group-hover:rotate-0 transition-transform duration-300 flex items-center justify-center">

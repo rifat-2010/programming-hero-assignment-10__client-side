@@ -5,6 +5,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import logo from "../assets/habit-tracker.png";
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               {/* Logo */}
-              <img src="/src/assets/habit-tracker.png" alt="habit_tracker-img" className="w-10 h-10 rounded-full" />
+              <img src={logo} alt="habit_tracker-img" className="w-10 h-10 rounded-full" />
               <h2 className="text-xl font-bold text-white">Habit_Tracker</h2>
             </div>
             <p className="text-gray-300">

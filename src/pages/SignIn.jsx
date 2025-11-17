@@ -4,6 +4,7 @@ import { IoEyeOff } from "react-icons/io5";
 import { Link, useLocation, useNavigate } from "react-router";
 import { auth } from "../firebase/firebase.config";
 import { toast } from "react-toastify";
+import logo from "../assets/habit-tracker.png";
 import {
   GoogleAuthProvider,
   signInWithEmailAndPassword,
@@ -67,7 +68,7 @@ const SignIn = () => {
             </p>
 
             <div className="flex items-center gap-3 mb-4">
-              <img src="/src/assets/habit-tracker.png" className="w-12 h-12 rounded-full" alt="" />
+              <img src={logo} className="w-12 h-12 rounded-full" alt="habit_tracker-imgage" />
               <div>
                 <div className="text-base font-semibold">Habit_Tracker</div>
                 <div className="text-xs text-white/70">

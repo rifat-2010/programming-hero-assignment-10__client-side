@@ -49,7 +49,7 @@ const handleSignout = () => {
  
       <div className="flex items-center justify-between md:mx-10">
         {/* mobile device row reverse and some gap */}
-        <div className="flex flex-row-reverse gap-5 md:gap-10">
+        <div className="flex flex-row-reverse  md:gap-10">
         <figure className="flex gap-2 items-center">
         <img src={logo} alt="nav-logo" className="w-10 h-10 md:w-15 md:h-15 rounded-full"/>
          <h1 className="md:text-2xl text-xl font-bold">Habit_Tracker</h1>
@@ -114,7 +114,7 @@ const handleSignout = () => {
     </ul>
 
 
-    <div className="flex gap-2 items-center">
+    <div className="flex gap-0.5 md:gap-2 items-center">
       {
         theme === "dark" ? <MdDarkMode size={30}/> : <MdLightMode size={30}/> 
       }

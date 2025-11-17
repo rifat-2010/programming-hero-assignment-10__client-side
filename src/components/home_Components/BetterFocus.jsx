@@ -6,7 +6,7 @@ import better_focus_img from "../../assets/better-focus-img.jpg";
 
 const BetterFocus = () => {
   return (
-    <div>
+    <div data-aos="fade-up" >
       
       <section className="py-24 px-4 bg-[#F4F7FE] relative overflow-hidden">
         {/* Animated background elements */}
@@ -29,7 +29,7 @@ const BetterFocus = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Visual Side */}
-            <div className="order-2 lg:order-1">
+            <div data-aos="fade-right"  className="order-2 lg:order-1">
               <div className="relative">
                 <div className="absolute inset-0 bg-linear-to-r from-blue-400 to-purple-400 rounded-3xl transform rotate-6 opacity-20 blur-xl"></div>
                 <div className="bg-white rounded-3xl p-12 shadow-xl relative">
@@ -44,7 +44,7 @@ const BetterFocus = () => {
 
             {/* Content Side */}
             <div className="order-1 lg:order-2 space-y-8">
-              <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+              <div data-aos="fade-left"  className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
                 <div className="flex gap-6">
                   <div className="shrink-0 w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                     <FaRegEye className="w-6 h-6" />
@@ -61,7 +61,7 @@ const BetterFocus = () => {
                 </div>
               </div>
 
-              <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+              <div data-aos="fade-left" className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
                 <div className="flex gap-6">
                   <div className="shrink-0 w-14 h-14 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">
                     <FaBoltLightning className="w-6 h-6" />
@@ -78,7 +78,7 @@ const BetterFocus = () => {
                 </div>
               </div>
 
-              <div className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
+              <div data-aos="fade-left" className="group bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
                 <div className="flex gap-6">
                   <div className="shrink-0 w-14 h-14 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
                     <SiGoogleanalytics className="w-6 h-6" />

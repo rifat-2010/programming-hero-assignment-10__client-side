@@ -2,7 +2,7 @@ import React from "react";
 
 const WorkSection = () => {
   return (
-    <div>
+    <div data-aos="fade-up">
       <section className="py-24 px-4 bg-linear-to-tr from-indigo-300 via-pink-200 to-purple-300 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
@@ -21,7 +21,7 @@ const WorkSection = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Step 1 */}
-            <div className="group">
+            <div  data-aos="fade-right" className="group">
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-indigo-400 to-purple-400 opacity-10 rounded-full transform translate-x-16 -translate-y-16"></div>
                 <div className="relative">
@@ -40,7 +40,7 @@ const WorkSection = () => {
             </div>
 
             {/* Step 2 */}
-            <div className="group">
+            <div  data-aos="fade-down" className="group">
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-blue-400 to-indigo-400 opacity-10 rounded-full transform translate-x-16 -translate-y-16"></div>
                 <div className="relative">
@@ -59,7 +59,7 @@ const WorkSection = () => {
             </div>
 
             {/* Step 3 */}
-            <div className="group">
+            <div  data-aos="fade-left" className="group">
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-purple-400 to-pink-400 opacity-10 rounded-full transform translate-x-16 -translate-y-16"></div>
                 <div className="relative">

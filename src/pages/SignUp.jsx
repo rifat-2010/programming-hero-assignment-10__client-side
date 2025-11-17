@@ -3,6 +3,7 @@ import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
 import { Link, useNavigate } from "react-router";
 import { auth } from "../firebase/firebase.config";
+import logo from "../assets/habit-tracker.png";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
@@ -91,7 +92,7 @@ const SignUp = () => {
             </p>
 
             <div className="flex items-center gap-3 mb-4">
-              <img src="/src/assets/habit-tracker.png" className="w-12 h-12 rounded-full" alt="" />
+              <img src={logo} className="w-12 h-12 rounded-full" alt="habit_tracker-image" />
               <div>
                 <div className="text-base font-semibold">Habit_Tracker</div>
                 <div className="text-xs text-white/70">
