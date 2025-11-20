@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { auth } from "../firebase/firebase.config";
 import { toast } from "react-toastify";
 import logo from "../assets/habit-tracker.png";
+import Hi_Img from "../assets/signIn-hi-img.jpg";
 import {
   GoogleAuthProvider,
   signInWithEmailAndPassword,
@@ -84,7 +85,7 @@ const SignIn = () => {
           </div>
           <div className="mt-6 hidden md:block">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwcQS-j2dCKPxFbjpuXXe-tIDKlax9hMPrmQ&s"
+              src={Hi_Img}
               alt="promo"
               className="w-full rounded-lg shadow-inner object-cover h-52"
             />

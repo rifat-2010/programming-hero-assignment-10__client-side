@@ -4,6 +4,7 @@ import { IoEyeOff } from "react-icons/io5";
 import { Link, useNavigate } from "react-router";
 import { auth } from "../firebase/firebase.config";
 import logo from "../assets/habit-tracker.png";
+import Hi_Img from "../assets/signUp-hi-img.png";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
@@ -108,9 +109,9 @@ const SignUp = () => {
             </ul>
           </div>
 
-          <div className="mt-6 hidden md:block">
+          <div className="mt-6">
             <img
-              src="https://png.pngtree.com/png-vector/20250429/ourmid/pngtree-cute-cartoon-boy-saying-hello-png-image_16119987.png"
+              src={Hi_Img}
               alt="promo"
               className="w-full rounded-lg shadow-inner object-cover h-72"
             />
